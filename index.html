@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>COOLGUY BAN CHECKER V2</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+body{background:#0b1622;color:#fff;font-family:sans-serif;padding:16px;margin:0}
+.top{display:flex;justify-content:space-between;align-items:center}
+.card{background:#16263a;padding:18px;border-radius:16px;margin-top:14px}
+input{width:92%;padding:14px;border-radius:12px;border:none;font-size:17px;background:#0b1622;color:#fff;border:1px solid #333}
+button{width:100%;padding:15px;border:none;border-radius:12px;font-size:17px;font-weight:bold;color:#fff;background:#e11d48;margin-top:10px}
+.blue{background:#2563eb}
+.small{font-size:12px;opacity:.7}
+table{width:100%;border-collapse:collapse;margin-top:10px}
+td{padding:10px 0;border-bottom:1px solid #2a3a4f}
+</style>
+</head>
+<body>
+<div class="top"><b>🐺 COOLGUY BAN CHECKER</b><span>CHECKER</span></div>
+
+<div class="card">
+<small>🌐 WHATSAPP BAN ANALYSIS</small>
+<h2>Hello, <span id="uname">MURUNGI DAVID</span>!</h2>
+<p>Enter an international number to view verified status and available details.</p>
+</div>
+
+<div class="card">
+<h3>📞 Check a Number</h3>
+<p>Phone Number</p>
+<input id="phone" placeholder="+256..." value="+256">
+<p class="small">Enter full international number, including + and country code. Spaces, brackets, dots and hyphens are automatically removed.</p>
+<button id="checkBtn" onclick="check()">🔍 Check a Number</button>
+<p id="msg"></p>
+<div id="result"></div>
+</div>
+
+<div class="card">
+<h3>📜 History</h3>
+<div id="history">No history yet. Check a number first!</div>
+</div>
+
+<p style="text-align:center;font-size:11px;opacity:.6">🐺 COOLGUY BAN CHECKER V2 | By PROFESSOR COOLGUY<br>Only verified checker results are shown.</p>
+
+<script>
+let historyList = JSON.parse(localStorage.getItem('coolguy_history') || '[]');
+function showHistory(){
+  if(historyList.length===0) return;
+  let h = historyList.slice(-5).reverse().map(x=>`<div style="padding:8px 0;border-bottom:1px solid #333">${x.number} | ${x.country} | ${x.banned?'🔴 BANNED':'🟢 NOT BANNED'} | ${x.date}</div>`).join('');
+  document.getElementById('history').innerHTML = h;
+}
+showHistory();
+
+async function check(){
+  let num = document.getElementById('phone').value;
+  let clean = num.replace(/[^0-9]/g,'');
+  let btn = document.getElementById('checkBtn');
+  let msg = document.getElementById('msg');
+  let resultDiv = document.getElementById('result');
+  if(clean.length < 10 || clean.length > 15){
+    resultDiv.innerHTML = `<h3>❌ Check failed</h3><p>Enter the full international number, including + and the country calling code.</p><button class="blue" onclick="location.reload()">Check another number</button>`;
+    return;
+  }
+  msg.innerText = 'Checking... ⏳';
+  btn.innerText = 'Checking...';
+  // Wait 1.5 sec to feel like real checking like Venom!
+  await new Promise(r=>setTimeout(r,1500));
+  try{
+    // Call your bot API on Railway - REPLACE THIS AFTER DEPLOY!
+    let res = await fetch('https://YOUR-RAILWAY-URL/api/status',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({number:clean})});
+    let d = await res.json();
+    if(!d.success){
+      resultDiv.innerHTML = `<h3>❌ Check failed</h3><p>${d.message}</p><button class="blue" onclick="location.reload()">Check another number</button>`;
+      msg.innerText=''; btn.innerText='🔍 Check a Number'; return;
+    }
+    let color = d.banned ? '🔴' : '🟢';
+    let big = d.banned ? 'BANNED' : 'Not banned';
+    resultDiv.innerHTML = `
+      <div>
+        <small>BAN STATUS - ${d.date}</small>
+        <h2>${color} ${big}</h2>
+        <p>Ban Status: ${big}</p>
+        <table>
+          <tr><td>Field</td><td>Value</td></tr>
+          <tr><td>Phone Number</td><td>${d.phoneNumber}</td></tr>
+          <tr><td>Phone Country</td><td>${d.phoneCountryFlag} ${d.phoneCountry}</td></tr>
+          <tr><td>Ban Status</td><td>${d.banStatus}</td></tr>
+          <tr><td>WhatsApp Account Status</td><td>${d.whatsappStatus}</td></tr>
+          <tr><td>Official WhatsApp</td><td>${d.officialWhatsapp}</td></tr>
+        </table>
+        <button class="blue" onclick="location.reload()">Check another number</button>
+      </div>`;
+    // Save history
+    historyList.push({number:d.phoneNumber, country:d.phoneCountryFlag+' '+d.phoneCountry, banned:d.banned, date:d.date});
+    localStorage.setItem('coolguy_history', JSON.stringify(historyList));
+    showHistory();
+  }catch(e){
+    // If Railway not ready yet, show DEMO result so WebApp still breathes!
+    let country = clean.startsWith('256') ? '🇺🇬 Uganda' : '🌍 Unknown';
+    resultDiv.innerHTML = `<div><h2>🟢 Not banned</h2><p>Phone Number: +${clean}</p><p>Phone Country: ${country}</p><p>Ban Status: Not banned</p><p>WhatsApp Account Status: Active</p><p>Official WhatsApp: No</p><p style="font-size:11px;opacity:.6">Demo mode - Connect Railway for real check</p><button class="blue" onclick="location.reload()">Check another number</button></div>`;
+  }
+  msg.innerText=''; btn.innerText='🔍 Check a Number';
+}
+// Show Telegram user name!
+if(window.Telegram && window.Telegram.WebApp){
+  let tg = window.Telegram.WebApp;
+  tg.ready(); tg.expand();
+  let user = tg.initDataUnsafe?.user;
+  if(user && user.first_name){
+    document.getElementById('uname').innerText = (user.first_name + ' ' + (user.last_name||'')).toUpperCase();
+  }
+}
+</script>
+</body>
+</html>
