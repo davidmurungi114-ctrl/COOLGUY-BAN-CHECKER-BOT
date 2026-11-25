@@ -7,9 +7,9 @@ COOLGUY BAN CHECKER BOT by PROFESSOR COOLGUY
 
 ---
 
-[[💙 OPEN BAN CHECKER 💙](https://img.shields.io/badge/💙_OPEN_BAN_CHECKER_💙-2563eb?style=for-the-badge&logo=telegram&logoColor=white)](http://t.me/coolguy_ban_checker_v2_bot)
+[![💙 OPEN BAN CHECKER 💙](https://img.shields.io/badge/💙_OPEN_BAN_CHECKER_💙-2563eb?style=for-the-badge&logo=telegram&logoColor=white)](http://t.me/coolguy_ban_checker_v2_bot)
 
-[[🚀 TRY BOT NOW](https://img.shields.io/badge/🚀_TRY_BOT_NOW-2563eb?style=for-the-badge&logo=telegram)](http://t.me/coolguy_ban_checker_v2_bot)
+[![🚀 TRY BOT NOW](https://img.shields.io/badge/🚀_TRY_BOT_NOW-2563eb?style=for-the-badge&logo=telegram)](http://t.me/coolguy_ban_checker_v2_bot)
 
 **Bot Link:** http://t.me/coolguy_ban_checker_v2_bot
 **Bot Username:** @coolguy_ban_checker_v2_bot
