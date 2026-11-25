@@ -15,9 +15,15 @@ COOLGUY BAN CHECKER BOT by PROFESSOR COOLGUY
 
 [![🚀 TRY BOT NOW](https://img.shields.io/badge/🚀_TRY_BOT_NOW-2563eb?style=for-the-badge&logo=telegram&logoColor=white)](http://t.me/coolguy_ban_checker_v2_bot)
 
-**Bot Link:** http://t.me/coolguy_ban_checker_v2_bot
+<br>
+
+<!-- ✅ THE 2 LINKS YOU CIRCLED - NOW BUTTONS! -->
+
+[![🤖 BOT LINK](https://img.shields.io/badge/🤖_BOT_LINK-2563eb?style=for-the-badge&logo=telegram&logoColor=white)](http://t.me/coolguy_ban_checker_v2_bot)
+
+[![🌐 WEBAPP LINK](https://img.shields.io/badge/🌐_WEBAPP_LINK-FF6B00?style=for-the-badge&logo=googlechrome&logoColor=white)](https://coolguy256.github.io/COOLGUY-BAN-CHEKER-API/)
+
 **Bot Username:** @coolguy_ban_checker_v2_bot
-**WebApp:** https://coolguy256.github.io/COOLGUY-BAN-CHEKER-API/
 
 ---
 
