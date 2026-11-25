@@ -1,9 +1,11 @@
 {
   "name": "coolguy-ban-checker-v2",
   "version": "2.0.0",
-  "description": "COOLGUY BAN CHECKER V2 by PROFESSOR COOLGUY - REAL CHECK",
+  "description": "COOLGUY BAN CHECKER V2 by PROFESSOR COOLGUY - REAL CHECK - BLUE BUTTON",
   "main": "bot.js",
-  "scripts": { "start": "node bot.js" },
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
     "telegraf": "^4.16.3",
     "express": "^4.19.2",
@@ -11,5 +13,8 @@
     "@whiskeysockets/baileys": "^6.7.9",
     "pino": "^8.19.0",
     "qrcode-terminal": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
