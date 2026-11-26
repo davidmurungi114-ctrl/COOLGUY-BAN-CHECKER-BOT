@@ -1,8 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>COOLGUY BAN CHECKER V2</title>
+<title>COOLGUY BAN CHECKER V2 - Check WhatsApp Ban Status Free</title>
+
+<!-- GOOGLE / CHROME SEARCH SEO - DO NOT DELETE -->
+<meta name="description" content="COOLGUY BAN CHECKER V2 - Check if your WhatsApp number is banned. Free WhatsApp Ban Checker by Professor COOLGUY Uganda. Fast, Free, Verified.">
+<meta name="keywords" content="COOLGUY BAN CHECKER, COOLGUY BAN CHECKER V2, WhatsApp ban checker, check WhatsApp banned, WhatsApp ban check Uganda, COOLGUY 256, Professor COOLGUY, free ban checker">
+<meta name="author" content="COOLGUY 256 - MURUNGI DAVID">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://davidmurungi114-ctrl.github.io/COOLGUY-BAN-CHECKER-BOT/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="COOLGUY BAN CHECKER V2 - Check WhatsApp Ban Free">
+<meta property="og:description" content="Check if your WhatsApp number is banned - Free! By COOLGUY 256">
+<meta property="og:url" content="https://davidmurungi114-ctrl.github.io/COOLGUY-BAN-CHECKER-BOT/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="COOLGUY BAN CHECKER V2">
+<meta name="twitter:description" content="Check WhatsApp Ban Status Free - COOLGUY BAN CHECKER">
+
 <script src="https://telegram.org/js/telegram-web-app.js"></script>
 <style>
 body{background:#0b1622;color:#fff;font-family:sans-serif;padding:16px;margin:0}
@@ -25,6 +41,8 @@ a{text-decoration:none}
   <span>CHECKER</span>
 </div>
 
+<h1 style="font-size:1px;opacity:0;position:absolute;">COOLGUY BAN CHECKER V2 - WhatsApp Ban Checker Uganda</h1>
+
 <a href="http://t.me/coolguy_ban_checker_v2_bot">
   <button class="blue">💙 OPEN BAN CHECKER 💙</button>
 </a>
@@ -32,7 +50,7 @@ a{text-decoration:none}
 <div class="card">
   <small>🌐 WHATSAPP BAN ANALYSIS</small>
   <h2>Hello, <span id="uname">MURUNGI DAVID</span>!</h2>
-  <p>Enter an international number to view verified status and available details.</p>
+  <p>Enter an international number to view verified status and available details. COOLGUY BAN CHECKER V2 - Free WhatsApp Ban Checker.</p>
 </div>
 
 <div class="card">
@@ -54,7 +72,7 @@ a{text-decoration:none}
   <button class="blue">💙 OPEN IN TELEGRAM BOT 💙</button>
 </a>
 
-<p style="text-align:center;font-size:11px;opacity:.6">🐺 COOLGUY BAN CHECKER V2 | By PROFESSOR COOLGUY<br>Only verified checker results are shown.</p>
+<p style="text-align:center;font-size:11px;opacity:.6">🐺 COOLGUY BAN CHECKER V2 | By PROFESSOR COOLGUY<br>Only verified checker results are shown. COOLGUY BAN CHECKER - Check WhatsApp Ban Status Free.</p>
 
 <script>
 let historyList = JSON.parse(localStorage.getItem('coolguy_history') || '[]');
@@ -83,8 +101,11 @@ async function check(){
 
   await new Promise(r=>setTimeout(r,1500));
 
+  // WORKS ON ANY PANEL - Auto detects your domain!
+  let API_URL = window.location.origin + '/api/status';
+
   try{
-    let res = await fetch('https://YOUR-RAILWAY-URL/api/status',{
+    let res = await fetch(API_URL,{
       method:'POST',
       headers:{'Content-Type':'application/json'},
       body:JSON.stringify({number:clean})
@@ -121,7 +142,7 @@ async function check(){
 
   }catch(e){
     let country = clean.startsWith('256') ? '🇺🇬 Uganda' : '🌍 Unknown';
-    resultDiv.innerHTML = `<div><h2>🟢 Not banned</h2><p>Phone Number: +${clean}</p><p>Phone Country: ${country}</p><p>Ban Status: Not banned</p><p>WhatsApp Account Status: Active</p><p>Official WhatsApp: No</p><p style="font-size:11px;opacity:.6">Demo mode - Connect Railway for real check</p><button class="blue" onclick="location.reload()">Check another number</button></div>`;
+    resultDiv.innerHTML = `<div><h2>🟢 Not banned</h2><p>Phone Number: +${clean}</p><p>Phone Country: ${country}</p><p>Ban Status: Not banned</p><p>WhatsApp Account Status: Active</p><p>Official WhatsApp: No</p><p style="font-size:11px;opacity:.6">Demo mode - Deploy backend on same panel for real check</p><button class="blue" onclick="location.reload()">Check another number</button></div>`;
   }
 
   msg.innerText=''; btn.innerText='🔍 Check a Number';
@@ -138,4 +159,4 @@ if(window.Telegram && window.Telegram.WebApp){
 </script>
 
 </body>
-</html>
+  </html>
