@@ -21,7 +21,7 @@ COOLGUY BAN CHECKER BOT by PROFESSOR COOLGUY
 
 [![🤖 BOT LINK](https://img.shields.io/badge/🤖_BOT_LINK-2563eb?style=for-the-badge&logo=telegram&logoColor=white)](http://t.me/coolguy_ban_checker_v2_bot)
 
-[![🌐 WEBAPP LINK](https://img.shields.io/badge/🌐_WEBAPP_LINK-FF6B00?style=for-the-badge&logo=googlechrome&logoColor=white)](https://davidmurungi114-ctrl.github.io/COOLGUY-BAN-CHECKER-BOT/)
+[![🌐 WEBAPP LINK](https://img.shields.io/badge/🌐_WEBAPP_LINK-FF6B00?style=for-the-badge&logo=googlechrome&logoColor=white)](https://davidmurungi114-ctrl.github.io/COOLGUY-THE-HUCKER-BAN-CHECKER-/)
 
 **Bot Username:** @coolguy_ban_checker_v2_bot
 
