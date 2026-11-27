@@ -38,7 +38,14 @@ COOLGUY BAN CHECKER BOT by PROFESSOR COOLGUY
 
 ### 📖 HOW TO USE
 
-1. Open Bot: http://t.me/coolguy_ban_checker_v2_bot
+1. Open Bot:
+
+<p align="center">
+  <a href="http://t.me/coolguy_ban_checker_v2_bot">
+    <img src="https://img.shields.io/badge/🔴_OPEN_BOT_NOW-FF0000?style=for-the-badge&logo=telegram&logoColor=white" width="380" alt="OPEN BOT">
+  </a>
+</p>
+
 2. Tap /start
 3. Tap 💙 OPEN BAN CHECKER 💙 BLUE BUTTON
 4. Send number: +256750765838
