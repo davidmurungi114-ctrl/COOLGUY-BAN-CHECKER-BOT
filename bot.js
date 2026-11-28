@@ -14,8 +14,8 @@ if (!BOT_TOKEN) {
 
 const OWNER = 'PROFESSOR COOLGUY';
 const BOT_USERNAME = '@coolguy_ban_checker_v2_bot';
-const BOT_LINK = 'http://t.me/coolguy_ban_checker_v2_bot';
-const WEBAPP_URL = process.env.WEBAPP_URL || 'https://davidmurungi114-ctrl.github.io/COOLGUY-BAN-CHECKER-BOT/';
+const BOT_LINK = 'https://t.me/coolguy_ban_checker_v2_bot';
+const WEBAPP_URL = 'https://davidmurungi114-ctrl.github.io/COOLGUY-BAN-CHECKER-BOT/';
 
 const bot = new Telegraf(BOT_TOKEN);
 const app = express();
@@ -27,7 +27,7 @@ let langDB = {};
 
 function cleanNumber(t){ return (t||'').replace(/[^0-9]/g,''); }
 
-// 💙 BLUE BUTTON - Opens your WEBSITE
+// 💙 BLUE BUTTON - Opens your WEBSITE - FIXED
 function blueButton(){ return Markup.button.webApp('💙 OPEN BAN CHECKER 💙', WEBAPP_URL); }
 
 function mainKeyboard(){
@@ -56,7 +56,7 @@ bot.action('howto', async (ctx)=>{
 });
 
 bot.action('guest', async (ctx)=>{
-  await ctx.editMessageText(`🐺 COOLGUY BAN CHECKER\n\n👤 GUEST MODE\nOpen the website from any chat:\n${BOT_LINK}\n\nTap the blue button to open the checker.`,
+  await ctx.editMessageText(`🐺 COOLGUY BAN CHECKER\n\n👤 GUEST MODE\nOpen the checker website:\n${WEBAPP_URL}\n\nTap the blue button to open the checker.`,
   Markup.inlineKeyboard([[Markup.button.callback('⬅️ Back', 'back')], [blueButton()]]));
 });
 
