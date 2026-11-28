@@ -2,7 +2,7 @@
 
 <img src="https://files.catbox.moe/a6ghrw.jpg" width="250" style="border-radius:20px; border: 4px solid #2563eb;">
 
-# COOLGUY-BAN-CHECKER-BOT
+# COOLGUY THE HUCKER BAN CHECKER
 COOLGUY BAN CHECKER BOT by PROFESSOR COOLGUY
 
 ---
